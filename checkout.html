@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - Eco Gift Set</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        input:focus, select:focus {
+            border-color: #059669; /* emerald-600 */
+            ring: 2px;
+            ring-color: #d1fae5; /* emerald-100 */
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="bg-emerald-600 p-2 rounded-lg">
+                        <i data-lucide="leaf" class="text-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-emerald-900 tracking-tight">Eco Gift Set</span>
+                </div>
+                <div class="flex items-center gap-2 text-stone-500 text-sm font-medium">
+                    <span class="text-emerald-600">Giỏ hàng</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    <span class="text-stone-800 font-bold">Thanh toán</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    <span>Hoàn tất</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-12">
+            
+            <!-- Left Side: Checkout Form -->
+            <div class="lg:col-span-7 space-y-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-emerald-950 mb-6 flex items-center gap-3">
+                        <i data-lucide="user" class="text-emerald-600"></i> Thông tin giao hàng
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Họ và tên</label>
+                            <input type="text" placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-50">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Số điện thoại</label>
+                            <input type="tel" placeholder="0901 234 567" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-50">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Email (Không bắt buộc)</label>
+                            <input type="email" placeholder="email@vi-du.com" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-50">
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Địa chỉ chi tiết</label>
+                            <input type="text" placeholder="Số nhà, tên đường, phường/xã..." class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-50">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Tỉnh / Thành phố</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:border-emerald-500 bg-white">
+                                <option>Chọn tỉnh thành</option>
+                                <option>Hà Nội</option>
+                                <option>Đà Nẵng</option>
+                                <option>TP. Hồ Chí Minh</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Quận / Huyện</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:border-emerald-500 bg-white">
+                                <option>Chọn quận huyện</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-8 border-t border-stone-200">
+                    <h2 class="text-2xl font-bold text-emerald-950 mb-6 flex items-center gap-3">
+                        <i data-lucide="credit-card" class="text-emerald-600"></i> Phương thức thanh toán
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <label class="flex items-center gap-4 p-4 rounded-2xl border-2 border-emerald-600 bg-emerald-50 cursor-pointer">
+                            <input type="radio" name="payment" checked class="w-5 h-5 text-emerald-600">
+                            <div class="flex-1">
+                                <p class="font-bold">Thanh toán khi nhận hàng (COD)</p>
+                                <p class="text-sm text-stone-500">Thanh toán bằng tiền mặt khi giao hàng</p>
+                            </div>
+                            <i data-lucide="truck" class="text-emerald-600"></i>
+                        </label>
+                        
+                        <label class="flex items-center gap-4 p-4 rounded-2xl border-2 border-stone-100 bg-white cursor-pointer hover:border-emerald-200 transition-all">
+                            <input type="radio" name="payment" class="w-5 h-5 text-emerald-600">
+                            <div class="flex-1">
+                                <p class="font-bold">Chuyển khoản ngân hàng</p>
+                                <p class="text-sm text-stone-500">Quét mã QR hoặc chuyển khoản qua ứng dụng ngân hàng</p>
+                            </div>
+                            <i data-lucide="landmark" class="text-stone-400"></i>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button class="w-full py-4 bg-emerald-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all">
+                        Hoàn tất đặt hàng - 530.000đ
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side: Order Summary -->
+            <div class="lg:col-span-5">
+                <div class="bg-white rounded-[32px] p-8 border border-stone-100 shadow-sm sticky top-32">
+                    <h3 class="text-xl font-bold text-emerald-950 mb-8 flex items-center justify-between">
+                        Đơn hàng của bạn
+                        <span class="bg-emerald-100 text-emerald-700 text-xs px-3 py-1 rounded-full">4 sản phẩm</span>
+                    </h3>
+
+                    <!-- Product Items List -->
+                    <div class="space-y-6 mb-8 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                        <!-- Item 1 -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-20 h-20 bg-stone-100 rounded-2xl overflow-hidden flex-shrink-0">
+                                <img src="img/set1.png" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-stone-800 text-sm line-clamp-1">Personal Eco Set</h4>
+                                <p class="text-xs text-stone-400">Số lượng: 1</p>
+                            </div>
+                            <p class="font-bold text-stone-700">199.000đ</p>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-20 h-20 bg-stone-100 rounded-2xl overflow-hidden flex-shrink-0">
+                                <img src="img/set2.png" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-stone-800 text-sm line-clamp-1">Student & School Green Set</h4>
+                                <p class="text-xs text-stone-400">Số lượng: 1</p>
+                            </div>
+                            <p class="font-bold text-stone-700">179.000đ</p>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-20 h-20 bg-stone-100 rounded-2xl overflow-hidden flex-shrink-0">
+                                <img src="img/set3.png" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-stone-800 text-sm line-clamp-1">Business Eco Set</h4>
+                                <p class="text-xs text-stone-400">Số lượng: 1</p>
+                            </div>
+                            <p class="font-bold text-stone-700">299.000đ</p>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-20 h-20 bg-stone-100 rounded-2xl overflow-hidden flex-shrink-0">
+                                <img src="img/set4.png" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-stone-800 text-sm line-clamp-1">Premium Eco Gift Set</h4>
+                                <p class="text-xs text-stone-400">Số lượng: 1</p>
+                            </div>
+                            <p class="font-bold text-stone-700">399.000đ</p>
+                        </div>
+                    </div>
+
+                    <!-- Price Details -->
+                    <div class="space-y-4 pt-6 border-t border-stone-100">
+                        <div class="flex justify-between text-stone-500">
+                            <span>Tạm tính</span>
+                            <span>500.000đ</span>
+                        </div>
+                        <div class="flex justify-between text-stone-500">
+                            <span>Phí vận chuyển</span>
+                            <span>30.000đ</span>
+                        </div>
+                        <div class="flex justify-between text-xl font-bold text-emerald-950 pt-2">
+                            <span>Tổng cộng</span>
+                            <span class="text-emerald-700">530.000đ</span>
+                        </div>
+                    </div>
+
+                    <a href="thanks.html" class="text-center hidden md:block w-full mt-8 py-4 bg-emerald-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-emerald-200 hover:bg-emerald-700 hover:-translate-y-1 transition-all active:scale-[0.98]">
+                        Đặt hàng ngay
+                    </a>
+                    
+                    <p class="text-center text-xs text-stone-400 mt-4 px-4 leading-relaxed">
+                        Bằng cách đặt hàng, bạn đồng ý với các Điều khoản dịch vụ và Chính sách bảo mật của EcoLife.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-white py-10 border-t border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-stone-400 text-sm">&copy; 2024 EcoLife Store. Sống xanh cho tương lai bền vững.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
